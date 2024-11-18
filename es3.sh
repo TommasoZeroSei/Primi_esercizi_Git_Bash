@@ -15,17 +15,24 @@ done
 git checkout -b featureA
 echo "Modifica featureA" > file2.txt
 git add file2.txt
-git commit "Modifica featureA"
+git commit -m "Modifica featureA"
 
+git checkout main
 git checkout -b featureB
 echo "Modifica featureB" > file2.txt
 git add file2.txt
-git commit "Modifica featureB"
+git commit -m "Modifica featureB"
 
 git log --oneline --graph --all
 
-git checkout master
+git checkout main
 git merge featureA
+git branch -d featureA
+
 git merge featureB
+nano file2.txt
+git add file2.txt
+git commit -m "Merge featureB -> main"
+git branch -d featureB
 
-
+git log --oneline --graph --all

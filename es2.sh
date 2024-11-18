@@ -26,8 +26,9 @@ git commit -m "Modifica a file B"
 
 git log --oneline --graph --all
 
-git checkout master
+git checkout main
 git merge devTemp
+git branch -d devTemp
 
 git log --oneline --graph --all
 git status
